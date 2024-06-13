@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:web_htttql_flutter/data/health_details.dart';
+import 'package:web_htttql_flutter/data/overview_details.dart';
 import 'package:web_htttql_flutter/util/responsive.dart';
 import 'package:web_htttql_flutter/widgets/custom_card_widget.dart';
 
@@ -9,10 +9,10 @@ class ActivityDetailsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final healthDetails = HealthDetails();
+    final overviewDetails = OverviewDetails();
 
     return GridView.builder(
-      itemCount: healthDetails.healthData.length,
+      itemCount: overviewDetails.overviewData.length,
       shrinkWrap: true,
       physics: const ScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -26,14 +26,14 @@ class ActivityDetailsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              healthDetails.healthData[index].icon,
+              overviewDetails.overviewData[index].icon,
               width: 30,
               height: 30,
             ),
             Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 4),
               child: Text(
-                healthDetails.healthData[index].value,
+                overviewDetails.overviewData[index].value,
                 style: const TextStyle(
                   fontSize: 18,
                   color: Colors.white,
@@ -42,7 +42,7 @@ class ActivityDetailsCard extends StatelessWidget {
               ),
             ),
             Text(
-              healthDetails.healthData[index].title,
+              overviewDetails.overviewData[index].title,
               style: const TextStyle(
                 fontSize: 13,
                 color: Colors.grey,

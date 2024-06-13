@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:web_htttql_flutter/util/responsive.dart';
+import 'package:web_htttql_flutter/widgets/activity_chart.dart';
 import 'package:web_htttql_flutter/widgets/activity_details_card.dart';
 import 'package:web_htttql_flutter/widgets/bar_graph_widget.dart';
 import 'package:web_htttql_flutter/widgets/header_widget.dart';
@@ -20,6 +21,8 @@ class DashboardWidget extends StatelessWidget {
             const HeaderWidget(),
             const SizedBox(height: 18),
             const ActivityDetailsCard(),
+            const SizedBox(height: 18),
+            const ActivityChart(),
             const SizedBox(height: 18),
             const LineChartCard(),
             const SizedBox(height: 18),

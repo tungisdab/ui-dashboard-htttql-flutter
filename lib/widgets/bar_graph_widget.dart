@@ -55,7 +55,8 @@ class BarGraphCard extends StatelessWidget {
                             return Padding(
                               padding: const EdgeInsets.only(top: 5),
                               child: Text(
-                                barGraphData.label[value.toInt()],
+                              truncateString(barGraphData.label[value.toInt()], 10),
+                                overflow: TextOverflow.visible,
                                 style: const TextStyle(
                                     fontSize: 11,
                                     color: Colors.grey,
@@ -83,6 +84,14 @@ class BarGraphCard extends StatelessWidget {
         );
       },
     );
+  }
+
+  String truncateString(String text, int length) {
+    if (text.length > length) {
+      return text.substring(0, length) + '...';
+    } else {
+      return text;
+    }
   }
 
   List<BarChartGroupData> _chartGroups(
